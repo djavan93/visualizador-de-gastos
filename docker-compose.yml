@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: visu-gastos-postgres
+    environment:
+      POSTGRES_DB: visu_gastos
+      POSTGRES_USER: visu
+      POSTGRES_PASSWORD: visu
+    ports:
+      - "5432:5432"
+    volumes:
+      - visu-gastos-pgdata:/var/lib/postgresql/data
+
+volumes:
+  visu-gastos-pgdata:
